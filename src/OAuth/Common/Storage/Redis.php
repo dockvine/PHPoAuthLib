@@ -35,7 +35,6 @@ class Redis implements TokenStorageInterface
     protected $cachedStates;
 
     /**
-     * @param Predis $redis An instantiated and connected redis client
      * @param string $key The key to store the token under in redis
      * @param string $stateKey The key to store the state under in redis.
      */
