@@ -39,15 +39,14 @@ class Redis implements TokenStorageInterface
      * @param string $key The key to store the token under in redis
      * @param string $stateKey The key to store the state under in redis.
      */
-    public function __construct(Predis $redis, $key, $stateKey)
+    public function __construct($key, $stateKey)
     {
-        $this->redis = $redis;
+        $this->redis = new \Predis\Client();
         $this->key = $key;
         $this->stateKey = $stateKey;
         $this->cachedTokens = array();
         $this->cachedStates = array();
     }
-
     /**
      * {@inheritDoc}
      */
